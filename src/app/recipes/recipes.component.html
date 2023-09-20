@@ -5,7 +5,6 @@
     <div class="col-md-7">
         <app-recipe-detail
             *ngIf="selectedRecipe; else noRecipeSelected"
-            [recipe]="selectedRecipe"
         ></app-recipe-detail>
         <ng-template #noRecipeSelected>
             <p>No recipe selected</p>
