@@ -54,6 +54,11 @@ export class ShoppingListEditComponent implements OnInit {
         this.editMode = false;
     }
 
+    onDelete() {
+        this.shoppingListService.deleteIngredient(this.editedItemIndex ?? 0);
+        this.onClear();
+    }
+
     ngOnDestroy() {
         this.subscription?.unsubscribe();
     }
