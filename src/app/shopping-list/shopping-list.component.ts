@@ -14,6 +14,10 @@ export class ShoppingListComponent implements OnInit {
 
     private ingredientChangeSubscription: Subscription | undefined;
 
+    onEditItem(i: number) {
+        this.shoppingListService.startedEditing.next(i);
+    }
+
     constructor(private shoppingListService: ShoppingListService) { }
 
     ngOnInit(): void {
