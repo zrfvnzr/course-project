@@ -11,7 +11,7 @@ import { RecipeService } from '../recipe.service';
 export class RecipeEditComponent implements OnInit {
 	id: number | undefined;
 	editMode = false;
-    recipeForm: FormGroup | undefined;
+    recipeForm: FormGroup = new FormGroup({});
 
     constructor(private route: ActivatedRoute, private recipeService: RecipeService) { }
 
@@ -41,6 +41,10 @@ export class RecipeEditComponent implements OnInit {
             'imagePath': new FormControl(recipeImagePath),
             'description': new FormControl(recipeDescription),
         });
+    }
+
+    onSubmit() {
+        console.log(this.recipeForm);
     }
 
 }
